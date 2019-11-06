@@ -28,6 +28,7 @@ export class PopupComponent implements OnChanges, OnDestroy, AfterViewInit, OnIn
   @Input() anchor?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left';
   @Input() offset?: number | PointLike | { [anchor: string]: [number, number] };
   @Input() className?: string;
+  @Input() maxWidth?: string;
 
   /* Dynamic input */
   @Input() feature?: GeoJSON.Feature<GeoJSON.Point>;
@@ -80,7 +81,7 @@ export class PopupComponent implements OnChanges, OnDestroy, AfterViewInit, OnIn
 
   ngOnDestroy() {
     if (this.popupInstance) {
-      if (this.lngLat) {
+      if (this.lngLat || this.feature) {
         this.MapService.removePopupFromMap(this.popupInstance);
       } else if (this.marker && this.marker.markerInstance) {
         this.MapService.removePopupFromMarker(this.marker.markerInstance);
@@ -96,7 +97,8 @@ export class PopupComponent implements OnChanges, OnDestroy, AfterViewInit, OnIn
         closeOnClick: this.closeOnClick,
         anchor: this.anchor,
         offset: this.offset,
-        className: this.className
+        className: this.className,
+        maxWidth: this.maxWidth
       },
       popupEvents: {
         open: this.open,

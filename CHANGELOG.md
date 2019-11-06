@@ -1,6 +1,60 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [4.1.0](https://github.com/Wykks/ngx-mapbox-gl/compare/v4.0.1...v4.1.0) (2019-10-23)
+
+
+### Features
+
+* add `clickTolerance` as an Input for MapComponent  [#135](https://github.com/Wykks/ngx-mapbox-gl/issues/135) ([#190](https://github.com/Wykks/ngx-mapbox-gl/issues/190)) ([055f90e](https://github.com/Wykks/ngx-mapbox-gl/commit/055f90e976b12816e71a5bf038df34f9f3af588d))
+* allow using mapbox-gl >= 1.1.0 ([80cdfab](https://github.com/Wykks/ngx-mapbox-gl/commit/80cdfabd9bec122d548498a7ac6569b7139dfb00))
+
+
+### Bug Fixes
+
+* make sure showcase works with TypeScript 3.5.3 ([cbaa95c](https://github.com/Wykks/ngx-mapbox-gl/commit/cbaa95caf4740c3958a9aa1361bbad8f246e53ab))
+
+### [4.0.1](https://github.com/Wykks/ngx-mapbox-gl/compare/v4.0.0...v4.0.1) (2019-10-13)
+
+
+### Bug Fixes
+
+* **popup:** actually remove the popup from the map when a "feature" is used as an anchor ([89f4aa4](https://github.com/Wykks/ngx-mapbox-gl/commit/89f4aa4))
+
+
+
+# [4.0.0](https://github.com/Wykks/ngx-mapbox-gl/compare/v3.3.0...v4.0.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* **controls:** Fix control order when using custom controls alongside built-in controls (fix [#75](https://github.com/Wykks/ngx-mapbox-gl/issues/75)) ([10612f0](https://github.com/Wykks/ngx-mapbox-gl/commit/10612f0))
+* **geocoder:** change property name for country option to countries ([781adc4](https://github.com/Wykks/ngx-mapbox-gl/commit/781adc4))
+
+
+### Features
+
+* update to angular 8 & other deps ([57f6d6e](https://github.com/Wykks/ngx-mapbox-gl/commit/57f6d6e))
+* update to mapbox-gl 1.1.0 ([1043b4f](https://github.com/Wykks/ngx-mapbox-gl/commit/1043b4f))
+* **marker:** Add ability to specify className (close [#172](https://github.com/Wykks/ngx-mapbox-gl/issues/172)) ([f7602c2](https://github.com/Wykks/ngx-mapbox-gl/commit/f7602c2))
+* **popup:** Add support for className ([#111](https://github.com/Wykks/ngx-mapbox-gl/issues/111)) ([#161](https://github.com/Wykks/ngx-mapbox-gl/issues/161)) ([3b30c90](https://github.com/Wykks/ngx-mapbox-gl/commit/3b30c90))
+* **popup:** Add support for maxWidth ([#180](https://github.com/Wykks/ngx-mapbox-gl/issues/180)) ([04d910b](https://github.com/Wykks/ngx-mapbox-gl/commit/04d910b))
+
+
+### Refactor
+
+* **marker:** remove old css hack (now fixed in mapbox-gl) (close [#114](https://github.com/Wykks/ngx-mapbox-gl/issues/114)) ([9864932](https://github.com/Wykks/ngx-mapbox-gl/commit/9864932))
+
+
+### BREAKING CHANGES
+
+* Update to angular 8. Drop support of Angular 7
+Also drop support of rxjs < 6.5.0
+* Since mapbox-gl 1.0, there's a new pricing model.
+If you use mapbox services, please check https://github.com/mapbox/mapbox-gl-js/releases/tag/v1.0.0 for more info
+* **marker:** You may be affected by this change, if you use html markers with custom css.
+
 
 # [3.3.0](https://github.com/Wykks/ngx-mapbox-gl/compare/v3.2.0...v3.3.0) (2019-07-03)
 
