@@ -170,8 +170,10 @@ export class MapService {
   }
 
   changeCanvasCursor(cursor: string) {
-    const canvas = this.mapInstance.getCanvasContainer();
-    canvas.style.cursor = cursor;
+    return this.zone.runOutsideAngular(() => {
+      const canvas = this.mapInstance.getCanvasContainer();
+      canvas.style.cursor = cursor;
+    });
   }
 
   queryRenderedFeatures(
